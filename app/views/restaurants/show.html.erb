@@ -1,0 +1,17 @@
+<h1><%= @restaurant.name %></h1>
+<p class="text-muted lh-lg"><%= @restaurant.address %></p>
+<p calss="lh-lg"><%= @restaurant.category %></p>
+<p calss="lh-lg"><%= @restaurant.phone_number %></p>
+<hr>
+
+<p><strong>Reviews</strong></p>
+
+<% @restaurant.reviews.each do |review|%>
+<div class="d-flex flex-grow-1">
+  <div class="flex-grow-1 p-2"><p class="text-decoration-none text-muted">-<%=review.content%></div>
+  <div class="p-2">Rating: <%=review.rating%></div>
+</div>
+<% end %>
+<br>
+<%= render "reviews/form", review: @review, restaurant: @restaurant %>
+<br>

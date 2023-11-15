@@ -1,0 +1,8 @@
+<h1>Restaurants</h1>
+<div>
+  <ul class="list-group list-group-flush">
+    <% @restaurants.each do |restaurant|%>
+    <li class="list-group-item text-decoration-none text-muted"><%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none font-weight-400 text-dark"%> - <%= restaurant.category%></li>
+    <% end %>
+  </ul>
+</div>
